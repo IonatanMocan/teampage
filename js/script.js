@@ -7,7 +7,7 @@ $(document).ready(function(){
           {
             breakpoint: 940,
             settings: {
-              arrows: false,
+              arrows: true,
               centerMode: true,
               centerPadding: '40px',
               slidesToShow: 2
@@ -16,7 +16,7 @@ $(document).ready(function(){
           {
             breakpoint: 640,
             settings: {
-              arrows: false,
+              arrows: true,
               centerMode: true,
               centerPadding: '40px',
               slidesToShow: 1
@@ -26,11 +26,10 @@ $(document).ready(function(){
     });
     const prev = document.querySelector('.slick-prev');
     const next = document.querySelector('.slick-next');
-    const all = document.querySelectorAll('.content');
+    const all = document.querySelectorAll('.peronal__content');
     prev.addEventListener('click', () => {
-      setTimeout(() => {
         const getElem = document.querySelector('.slick-center').getAttribute('data-slick-index');
-        const infoActive = document.querySelector('.content').getAttribute('data-info-show');
+        const infoActive = document.querySelector('.peronal__content').getAttribute('data-info-show');
         if(getElem !== infoActive) {
           all.forEach(item => {
             const dates = document.querySelector(`[data-info-show='${getElem}']`);
@@ -45,13 +44,11 @@ $(document).ready(function(){
             dates.classList.add('active')
           })
         }
-      },1000)
     })
 
     next.addEventListener('click', () => {
-      setTimeout(() => {
         const getElem = document.querySelector('.slick-center').getAttribute('data-slick-index');
-        const infoActive = document.querySelector('.content').getAttribute('data-info-show');
+        const infoActive = document.querySelector('.peronal__content').getAttribute('data-info-show');
 
 
         if(getElem !== infoActive) {
@@ -68,6 +65,5 @@ $(document).ready(function(){
             dates.classList.add('active')
           })
         }
-      },1000)
     })
 });
