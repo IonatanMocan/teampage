@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.face {
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+}
+.face-item {
+    color: green;
+    width: 100%;
+    margin: 10px;
+    position: relative;
+    max-height: 385px;
+}
+.face-item img{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+}
+.slick-center img:nth-child(1) {
+    z-index: 13;
+}
+.content {
+    display: none;
+}
+.active {
+    display: block;
+    text-align: center;
+}
+.hidden {
+    display: none !important;
+}
+
+/* .team-page__block {
+    width: 100%;
+    min-height: 850px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.team-page__title {
+    font-size: calc(25pt + 43 * (100vw / 1440));
+    text-transform: uppercase;
+    color: white;
+}
+/* work on image start*/
+/* .team-page__surce {
+    max-width: 305px;
+    margin:10px 5px;
+    min-height: 250px;
+    height: 385px;
+    position: relative;
+}
+.team-page__image {
+    max-width: 305px;
+    height: 385px;
+    min-height: 250px;
+    position: absolute;
+    height: 100%;
+}
+.team-page__image:nth-child(1) {
+    z-index: 1;
+} */
+/*  working about info */
+/* .team-page__card {
+    width: 100%;
+}
+.team-page__info  {
+    color: white;
+    display: flex;
+    max-width: 1050px;
+    flex-wrap: wrap;
+    display: flex;
+}
+.team-page__name-username {
+    text-transform: uppercase;
+    font-size: calc(14pt + 18 * (100vw / 1440));
+}
+.team-page__descr {
+    margin: 10px 15px 0 0;
+}
+.team-page__card {
+    display: flex;
+}
+.team-page__speceliztion {
+    text-transform: uppercase;
+    font-size:  calc(8pt + 8 * (100vw / 1440));
+}
+.team-page__auto-descr {
+    max-width: 550px;
+    margin: 5px 0;
+    font-size:  calc(8pt + 8 * (100vw / 1440));
+}
+.team-page__auto-descr {
+    display: flex;
+    width: 100%;
+}
+.team-page__info {
+    display: none;
+} */
+/* .team-page__card--active {
+    display: block;
+} */
+/* .team-page__block {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.team-page__wrappper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.team-page__surce {
+    max-width: 305px;
+    max-height: 380px;
+}
+.front, .back {
+    position: relative;
+    max-width: 305px;
+    max-height: 380px;
+}
+.team-page__image {
+    max-width: 305px;
+    position: absolute;
+    object-fit: contain;
+} */
