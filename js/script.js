@@ -26,46 +26,7 @@ $(document).ready(function(){
     });
     const prev = document.querySelector('.slick-prev');
     const next = document.querySelector('.slick-next');
-    const all = document.querySelectorAll('.peronal__content');
-    prev.addEventListener('click', () => {
-        const getElem = document.querySelector('.slick-center').getAttribute('data-slick-index');
-        const infoActive = document.querySelector('.peronal__content').getAttribute('data-info-show');
-        if(getElem !== infoActive) {
-          all.forEach(item => {
-            const dates = document.querySelector(`[data-info-show='${getElem}']`);
-            item.classList.remove('active');
-            dates.classList.add('active')
-          })
-        }
-        else {
-          all.forEach(item => {
-            const dates = document.querySelector(`[data-info-show='${getElem}']`);
-            item.classList.remove('active');
-            dates.classList.add('active')
-          })
-        }
-    })
 
-    next.addEventListener('click', () => {
-        const getElem = document.querySelector('.slick-center').getAttribute('data-slick-index');
-        const infoActive = document.querySelector('.peronal__content').getAttribute('data-info-show');
-
-
-        if(getElem !== infoActive) {
-          all.forEach(item => {
-            const dates = document.querySelector(`[data-info-show='${getElem}']`);
-            item.classList.remove('active');
-            dates.classList.add('active')
-          })
-        }
-        else {
-          all.forEach(item => {
-            const dates = document.querySelector(`[data-info-show='${getElem}']`);
-            item.classList.remove('active');
-            dates.classList.add('active')
-          })
-        }
-    })
     const persons = [ 
       {
         dataInfoShow: -1,
@@ -113,17 +74,38 @@ $(document).ready(function(){
         lecturing Dean, she lectures and mentors design students at the Idea School of Design at Capilano University.`,
       },
     ]
+    next.addEventListener('click', () => {
+      const activeClass = document.querySelector('.slick-center');
+            const activeDataSlickIndex = activeClass.getAttribute('data-slick-index');
 
-    persons.map(item => {
-        const elementsDiv = document.createElement('div');
-        elementsDiv.classList.add('peronal__content');
-        elementsDiv.setAttribute('data-info-show', `${item.dataInfoShow}`);
-        elementsDiv.innerHTML = `
-          <div class="peronal__content__descr">
-              <h2>${item.name}</h2>
-              <h4>${item.specialization}</h4>
-          </div>
-          <p class="peronal__content__auto-descr">${item.description}</p>`;
-          console.log(elementsDiv)
+          let date = persons.find((prevent, current) => {
+            if(prevent.dataInfoShow == activeDataSlickIndex) {
+              const elementsDiv = document.createElement('div');
+                    elementsDiv.setAttribute('data-info-show', `${prevent.dataInfoShow}`);
+                    elementsDiv.innerHTML = `
+                    <div class="peronal__content__descr">
+                      <h2>${prevent.name}</h2>
+                      <h4>${prevent.specialization}</h4>
+                    </div>`;
+              console.log(elementsDiv);
+            }
+          });
+    })
+    prev.addEventListener('click', () => {
+      const activeClass = document.querySelector('.slick-center');
+            const activeDataSlickIndex = activeClass.getAttribute('data-slick-index');
+
+          let date = persons.find((prevent, current) => {
+            if(prevent.dataInfoShow == activeDataSlickIndex) {
+              const elementsDiv = document.createElement('div');
+                    elementsDiv.setAttribute('data-info-show', `${prevent.dataInfoShow}`);
+                    elementsDiv.innerHTML = `
+                    <div class="peronal__content__descr">
+                      <h2>${prevent.name}</h2>
+                      <h4>${prevent.specialization}</h4>
+                    </div>`;
+              console.log(elementsDiv);
+            }
+          });
     })
 });
