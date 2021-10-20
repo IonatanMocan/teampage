@@ -24,9 +24,13 @@ $(document).ready(function(){
           },
         ]
     });
-    const prev = document.querySelector('.slick-prev');
-    const next = document.querySelector('.slick-next');
-
+    const prev = document.querySelector('.slick-prev'),
+          next = document.querySelector('.slick-next'),
+          elementsDiv = document.createElement('div'),
+          personal = document.createElement('div');
+          personal.classList.add('personal');
+          document.querySelector('.face').after(personal);
+          elementsDiv.classList.add('personal__content');
     const persons = [ 
       {
         dataInfoShow: -1,
@@ -74,38 +78,25 @@ $(document).ready(function(){
         lecturing Dean, she lectures and mentors design students at the Idea School of Design at Capilano University.`,
       },
     ]
-    next.addEventListener('click', () => {
+    function returnElem() {
       const activeClass = document.querySelector('.slick-center');
-            const activeDataSlickIndex = activeClass.getAttribute('data-slick-index');
-
-          let date = persons.find((prevent, current) => {
-            if(prevent.dataInfoShow == activeDataSlickIndex) {
-              const elementsDiv = document.createElement('div');
-                    elementsDiv.setAttribute('data-info-show', `${prevent.dataInfoShow}`);
-                    elementsDiv.innerHTML = `
-                    <div class="peronal__content__descr">
-                      <h2>${prevent.name}</h2>
-                      <h4>${prevent.specialization}</h4>
-                    </div>`;
-              console.log(elementsDiv);
-            }
-          });
-    })
-    prev.addEventListener('click', () => {
-      const activeClass = document.querySelector('.slick-center');
-            const activeDataSlickIndex = activeClass.getAttribute('data-slick-index');
-
-          let date = persons.find((prevent, current) => {
-            if(prevent.dataInfoShow == activeDataSlickIndex) {
-              const elementsDiv = document.createElement('div');
-                    elementsDiv.setAttribute('data-info-show', `${prevent.dataInfoShow}`);
-                    elementsDiv.innerHTML = `
-                    <div class="peronal__content__descr">
-                      <h2>${prevent.name}</h2>
-                      <h4>${prevent.specialization}</h4>
-                    </div>`;
-              console.log(elementsDiv);
-            }
-          });
-    })
+      const activeDataSlickIndex = activeClass.getAttribute('data-slick-index');
+      return( persons.find((prevent) => {
+        if(prevent.dataInfoShow == activeDataSlickIndex) {
+                elementsDiv.setAttribute('data-info-show', `${prevent.dataInfoShow}`);
+                elementsDiv.classList.add('active');
+                elementsDiv.innerHTML = `
+                <div class="personal__content__descr">
+                  <h2>${prevent.name}</h2>
+                  <h4>${prevent.specialization}</h4>
+                </div>
+                <p class="personal__content__auto-descr">${prevent.description}</p>
+            `;
+          personal.append(elementsDiv);
+        }
+      }));
+    }
+    next.addEventListener('click', returnElem)
+    prev.addEventListener('click', returnElem)
+    returnElem();
 });
