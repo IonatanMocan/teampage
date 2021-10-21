@@ -195,6 +195,6 @@
     color: black;
 }
 /* i added */
-.slick-center img:nth-child(1) {
+.slick-center img:nth-child(2) {
     z-index: 10;
 }

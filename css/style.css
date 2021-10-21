@@ -3,12 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* import Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+/* Druk Wide */
+@font-face {
+    font-family: "Druk-Wide-Bold"; 
+    src: url("../fonts/DrukWide-Bold.ttf");
+}
 .container {
     margin:0 auto;
     padding: 10px 20px;
     max-width: 1440px;
 }
-.wrapper {
+.team-page {
     width: 100%;
     background-image: url('../images/TeamPage_1920x1080_Background.jpg');
     background-size: cover;
@@ -16,32 +24,42 @@
     min-height: 100vh;
 }
 .title {
-    font-size: calc(25pt + 43 * (100vw / 1440));
+    font-size: calc(20pt + 34 * (100vw / 1440));
     text-transform: uppercase;
     color: white;
+    width: 85%;
     text-align: center;
+    font-family: 'Druk-Wide-Bold';
     margin-bottom: 80px;
 }
-.face {
+.team-page__wrapper {
     max-width: 1245px;
-    border-bottom: 3px solid white;
+    border-bottom: 1.6pt solid white;
     margin: 0 auto;
     position: relative;
 }
-.face-item {
-    max-width: calc(1245 / 3);
+.team-page__wrapper-item {
+    max-width: calc(1245px / 3);
     margin: 0 20px;
-    border-top: 3px solid white;
-    border-left: 3px solid white;
-    border-right: 3px solid white;
     position: relative;
-    max-height: 385px;
+    max-height: 420px;
 }
-.face-item img{
+.team-page__wrapper-item h3{
+    color: white;
+    font-family: 'Druk-Wide-Bold';
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(10pt + 3 * (100vw / 1440));
+}
+.team-page__wrapper-item img{
     width: 100%;
+    margin-top: 20px;
+    border-top: 1.6pt solid white;
+    border-left: 1.6pt solid white;
+    border-right: 1.6pt solid white;
     background-repeat: no-repeat;
     position: absolute;
-    height: 100%;
+    min-height: 385px;
     object-fit: cover;
 }
 .personal {
@@ -58,14 +76,19 @@
 }
 .personal__content__descr h2{
     text-transform: uppercase;
-    font-size: calc(16pt + 18 * (100vw / 1440));
+    font-family: 'Druk-Wide-Bold';
+    margin-bottom: 12px;
+    font-size: calc(16pt + 10 * (100vw / 1440));
 }
 .personal__content__descr h4{
     text-transform: uppercase;
-    font-size:  calc(12pt + 4 * (100vw / 1440));
+    font-family: 'Roboto', sans-serif;
+    font-size:  calc(11pt + 4 * (100vw / 1440));
+    text-align: right;
 }
 .personal__content__auto-descr {
     margin: 5px 0;
+    font-family: 'Roboto', sans-serif;
     font-size:  calc(12pt + 4 * (100vw / 1440));
     max-width: 900px;
 }

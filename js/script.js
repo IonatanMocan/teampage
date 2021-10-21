@@ -1,6 +1,7 @@
 $(document).ready(function(){
-    $('.face').slick({
+    $('.team-page__wrapper').slick({
         centerMode: true,
+        swipe: false,
         centerPadding: '60px',
         slidesToShow: 3,
         responsive: [
@@ -29,7 +30,7 @@ $(document).ready(function(){
           elementsDiv = document.createElement('div'),
           personal = document.createElement('div');
           personal.classList.add('personal');
-          document.querySelector('.face').after(personal);
+          document.querySelector('.team-page__wrapper').after(personal);
           elementsDiv.classList.add('personal__content');
     const persons = [ 
       {
