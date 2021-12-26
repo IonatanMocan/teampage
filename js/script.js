@@ -82,16 +82,16 @@ $(document).ready(function(){
     function returnElem() {
       const activeClass = document.querySelector('.slick-center');
       const activeDataSlickIndex = activeClass.getAttribute('data-slick-index');
-      return( persons.find((prevent) => {
-        if(prevent.dataInfoShow == activeDataSlickIndex) {
-                elementsDiv.setAttribute('data-info-show', `${prevent.dataInfoShow}`);
+      return( persons.find((previous) => {
+        if(previous.dataInfoShow == activeDataSlickIndex) {
+                elementsDiv.setAttribute('data-info-show', `${previous.dataInfoShow}`);
                 elementsDiv.classList.add('active');
                 elementsDiv.innerHTML = `
                 <div class="personal__content__descr">
-                  <h2>${prevent.name}</h2>
-                  <h4>${prevent.specialization}</h4>
+                  <h2>${previous.name}</h2>
+                  <h4>${previous.specialization}</h4>
                 </div>
-                <p class="personal__content__auto-descr">${prevent.description}</p>
+                <p class="personal__content__auto-descr">${previous.description}</p>
             `;
           personal.append(elementsDiv);
         }
